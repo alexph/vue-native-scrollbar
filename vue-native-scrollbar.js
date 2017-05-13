@@ -626,7 +626,8 @@
 
 
         var destroyScrollbar = function(el){
-
+            var state = getState(el);
+            
             // clear events
             state.dragger.removeEventListener('mousedown', state.barMousedown, 0);
             state.el2.removeEventListener('scroll', state.scrollHandler, 0);
@@ -635,7 +636,7 @@
 
             // clear elements
             state.dragger.removeChild(state.dragger.firstChild);
-            state.el2.removeChild(state.dragger);
+            state.el1.removeChild(state.dragger);
 
             // clear timeouts that may be still running
             state.scrollingPhantomClassTimeout ?
